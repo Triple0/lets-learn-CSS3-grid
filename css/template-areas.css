@@ -7,7 +7,7 @@
 
 body {
     display: grid;
-    grid-template-columns: 1;
+    grid-template-columns: 100%;
     grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh;
 }
 
@@ -35,4 +35,38 @@ body {
     .other-links { grid-area: other-links; }
     .copyright-info { grid-area: copyright-info; }
     
+}
+
+
+@media screen and ( min-width: 1024px ) {
+
+    body {
+        grid-template-columns: 
+            calc( 100% / 3 ) /* One third!*/
+            calc( 100% / 6 ) /* Half of one third!*/
+            calc( 100% / 6 ) /* Half of one third!*/
+            calc( 100% / 3 ); /* One third!*/
+        grid-template-rows: 35vw 35vw 35vw;/* Use auto with real content, unless you are sure of a specific size*/
+        grid-template-areas:
+            "hero hero hero hero"
+            "first-service second-service second-service third-service"
+            "other-links other-links copyright-info copyright-info";
+    }
+}
+
+/* Let's try positioning*/
+.first-service,
+.second-service,
+.third-service {
+    width: 50%; /* percent based on available  */
+    height: 50%;
+    justify-self: center; /* Hoizontal position  (start, center, end.) */
+    align-self: center; /* Vertical position  (start, center, end.) */
+}
+
+.second-service {
+    width: 75%; /* percent based on available  */
+    height: 75%;
+    justify-self: center; /* Hoizontal position  (start, center, end.) */
+    align-self: center; /* Vertical position  (start, center, end.) */
 }
