@@ -1,0 +1,128 @@
+* {
+    font-size: 25px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25vh 25vh 25vh 25vh 25vh 25vh 25vh 25vh;
+   
+}
+
+.title, .footer{ background: red; }
+.welcome, .footer{ background: orange; }
+.login, .events{ background: goldenrod; }
+.navigation, .promotions{ background: purple; }
+.sidebar, .con{ background: thistle; }
+
+
+.title {
+    grid-column-start: 1;
+    grid-row-start: 1; 
+       
+}
+
+.login {
+    grid-column-start: 2;
+        
+}
+
+.navigation {
+    grid-column-start: span 2;
+    grid-row-start: 2;         
+}
+
+.sidebar {
+    grid-column-start: span 2; 
+    grid-row-start: 3;      
+}
+
+.welcome {
+    grid-column-start: span 2;  
+    grid-row-start: 4;     
+}
+    
+.events {
+    grid-column-start: span 2;
+    grid-row-start: 5;      
+}
+
+.promotions {
+    grid-column-start: span 2;
+    grid-row-start: 6;      
+}
+   
+.con {
+    grid-column-start: span 2; 
+    grid-row-start: 7;     
+}
+   
+.footer {
+    grid-column-start: span 2;
+    grid-row-start: 8;      
+}
+   
+
+
+@media screen and ( min-width: 500px) {
+
+    body {
+        
+            grid-template-columns: 50% 50%; /*2 columns! */
+            grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh 30vh; /* 4 rows! */
+            grid-template-areas: 
+                "title login" /* Row one: hero spans two columns */
+                "navigation navigation" /* Row two: each is one cell */
+                "welcome welcome" /* Row three: third-service spans two columns */
+                "sidebar sidebar"
+                "events promotions" /* Row two: each is one cell */
+                "con con" /* Row three: third-service spans two columns */
+                "footer footer"; /* Row four: each is one cell. */
+        }
+    
+        .title { grid-area: title; }
+        .login { grid-area: login; }
+        .navigation { grid-area: navigation; }
+        .welcome { grid-area: welcome; }
+        .sidebar { grid-area: sidebar; }
+        .events { grid-area: events; }
+        .promotions { grid-area: promotions; }
+        .con { grid-area: con; }
+        .footer { grid-area: footer; }
+        
+}
+
+
+@media screen and ( min-width: 1024px) {
+
+    body {
+        
+            grid-template-columns: 25% 25% 25% 25%; /*2 columns! */
+            grid-template-rows: 30vh 30vh 30vh 30vh 30vh; /* 4 rows! */
+            grid-template-areas: 
+                "title navigation navigation login" /* Row one: hero spans two columns */
+                "welcome welcome welcome welcome" /* Row three: third-service spans two columns */
+                "events events promotions sidebar"
+                "con con con sidebar" /* Row three: third-service spans two columns */
+                "footer footer footer sidebar"; /* Row four: each is one cell. */
+        }
+    
+        .title { grid-area: title; }
+        .login { grid-area: login; }
+        .navigation { grid-area: navigation; }
+        .welcome { grid-area: welcome; }
+        .sidebar { grid-area: sidebar; }
+        .events { grid-area: events; }
+        .promotions { grid-area: promotions; }
+        .con { grid-area: con; }
+        .footer { grid-area: footer; }
+        
+}
+       
+   
+
+    
